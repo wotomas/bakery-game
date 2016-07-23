@@ -1,4 +1,6 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
+using System.Linq;
 
 namespace Application
 {
@@ -20,8 +22,9 @@ namespace Application
 			return output;
 		}
 
-		public static string FunctionConverter(string finalFunction){
-			return new string((from c in finalFunction where char.IsLetterOrDigit(c) select c).ToArray());
+		public static char[] FormulaConverter(string finalFunction){
+			//return new string((from c in finalFunction where char.IsLetterOrDigit(c) select c).ToArray());
+			return (from c in finalFunction where char.IsLetterOrDigit(c) select c).ToArray();
 		}
 	}
 }
